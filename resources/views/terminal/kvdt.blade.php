@@ -7,10 +7,10 @@
         @include('components.menu')
         <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">Prai Terminal</div>
+                <div class="panel-heading">KVDT Terminal</div>
 
                 <div class="panel-body">
-                   Prai Terminal
+                   KVDT Terminal
                 </div>
 
                 <table class="table">
@@ -22,9 +22,9 @@
                         <th>Hauler</th>
                     </tr>
                 
-                @if(count($prai) > 0)
+                @if(count($kvdt) > 0)
                     <?php $counter = 1; ?>
-                    @foreach($prai as $i)
+                    @foreach($kvdt as $i)
                         <tr>
                             <td>{{$counter++}}</td>
                             <td>{{$i->plate}}</td>

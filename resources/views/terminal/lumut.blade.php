@@ -7,10 +7,10 @@
         @include('components.menu')
         <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">Prai Terminal</div>
+                <div class="panel-heading">Lumut Terminal</div>
 
                 <div class="panel-body">
-                   Prai Terminal
+                   Lumut Terminal
                 </div>
 
                 <table class="table">
@@ -22,9 +22,9 @@
                         <th>Hauler</th>
                     </tr>
                 
-                @if(count($prai) > 0)
+                @if(count($lumut) > 0)
                     <?php $counter = 1; ?>
-                    @foreach($prai as $i)
+                    @foreach($lumut as $i)
                         <tr>
                             <td>{{$counter++}}</td>
                             <td>{{$i->plate}}</td>
