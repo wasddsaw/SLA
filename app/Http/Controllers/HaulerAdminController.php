@@ -11,7 +11,7 @@ class HaulerAdminController extends Controller
     {
         $this->validate($request, [
             
-            'username' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:hauler_admins',
             'email' => 'required|string|email|max:255|unique:hauler_admins',
             'hauler_id' => 'required',
 
