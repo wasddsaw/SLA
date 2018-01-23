@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Roadtanker;
+use App\Hauler_admin;
 
 class HomeController extends Controller
 {
@@ -73,6 +74,15 @@ class HomeController extends Controller
         return view('terminal.westport')->with('westport', $westport);
     }
     // end terminal
+    public function hauler()
+    {
+        $hauler_admins = Hauler_admin::get();
+        return view('pages.hauler', compact('hauler_admins'));
+    }
+    public function create_hauler()
+    {
+        return view('pages.create_hauler');
+    }
     public function roadtanker()
     {
         $roadtankers = Roadtanker::get();

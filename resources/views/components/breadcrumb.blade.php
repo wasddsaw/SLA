@@ -29,7 +29,14 @@
         <li class="active">Pasir Gudang</li>
     @elseif ($route == 'westport')  
         <li><a href="{{ route('home') }}">Dashboard</a></li>
-        <li class="active">Westport</li>                         
+        <li class="active">Westport</li>  
+    @elseif ($route == 'hauler')  
+        <li><a href="{{ route('home') }}">Dashboard</a></li>
+        <li class="active">Hauler</li>
+    @elseif ($route == 'create_hauler')  
+        <li><a href="{{ route('home') }}">Dashboard</a></li>
+        <li><a href="{{ route('pages.hauler') }}">Hauler</a></li>
+        <li class="active">Create Hauler Admin</li>                              
     @elseif ($route == 'roadtanker')  
         <li><a href="{{ route('home') }}">Dashboard</a></li>
         <li class="active">Roadtanker</li>
