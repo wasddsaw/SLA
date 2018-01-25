@@ -45,6 +45,16 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'hauler_admin' => [
+            'driver' => 'session',
+            'provider' => 'hauler_admins',
+        ],
+
+        'hauler_admin-api' => [
+            'driver' => 'token',
+            'provider' => 'hauler_admins',
+        ],
     ],
 
     /*
@@ -68,6 +78,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'hauler_admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Hauler_admin::class,
         ],
 
         // 'users' => [
@@ -94,6 +108,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'hauler_admins' => [
+            'provider' => 'hauler_admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],

@@ -84,7 +84,7 @@
 
                 <div class="links">
                     <a href="{{ route('login') }}">COF</a>
-                    <a href="#">FOE</a>
+                    <a href="{{ route('hauler_admin.login') }}">FOE</a>
                     <a href="#">HAULER</a>
                 </div>
             </div>

@@ -21,6 +21,7 @@ Route::group(['middleware' => 'revalidate'],function(){
     Auth::routes();
 
     // cof 
+    Route::get('/cof/logout', 'Auth\LoginController@userLogout')->name('cof.logout');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/hauler', 'HomeController@hauler')->name('pages.hauler');
     Route::get('/create_hauler', 'HomeController@create_hauler')->name('pages.create_hauler');
@@ -28,7 +29,7 @@ Route::group(['middleware' => 'revalidate'],function(){
     Route::get('/upload', 'HomeController@upload')->name('pages.upload');
 
     // haule admin create
-    Route::post('hauler_create', 'HaulerAdminController@store')->name('hauler_admin.store');
+    Route::post('hauler_create', 'HomeController@store_hauler')->name('hauler_admin.store');
 
     // roadtanker upload
     Route::post('roadtanker-import', 'RoadtankerController@RoadtankerImport')->name('roadtanker.import');
@@ -44,6 +45,15 @@ Route::group(['middleware' => 'revalidate'],function(){
     Route::get('/melaka', 'HomeController@melaka')->name('terminal.melaka');
     Route::get('/pgudang', 'HomeController@pgudang')->name('terminal.pgudang');
     Route::get('/westport', 'HomeController@westport')->name('terminal.westport');
+
+    Route::prefix('hauler_admin')->group(function(){
+
+        Route::get('/', 'HaulerAdminController@index')->name('hauler_admin.dashboard');
+        Route::get('/login', 'Auth\HaulerLoginController@showLoginForm')->name('hauler_admin.login');
+        Route::post('/login', 'Auth\HaulerLoginController@login')->name('hauler_admin.login.submit');
+        Route::get('/logout', 'Auth\HaulerLoginController@logout')->name('hauler_admin.logout');
+
+    });
 
 });
 //end revalidate

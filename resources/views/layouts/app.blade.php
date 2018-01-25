@@ -43,11 +43,13 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="active"><a href="{{ route('login') }}">COF</a></li>
+                            <li><a href="{{ route('login') }}">COF</a></li>
                             <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
                             <li><a href="#">FOE</a></li>
-                            <li><a href="#">Hauler</a></li>
+                            <li><a href="{{ route('hauler_admin.login') }}">Hauler</a></li>  
                         @else
+
+                            @if(Auth::guard('web')->check())
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -55,18 +57,24 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                        <a href="{{ route('cof.logout') }}">COF Logout</a>
                                     </li>
                                 </ul>
                             </li>
+                            @endif
+                            @if(Auth::guard('hauler_admin')->check())
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('hauler_admin.logout') }}">Hauler Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            @endif
                         @endguest
                     </ul>
                 </div>

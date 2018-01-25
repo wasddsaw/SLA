@@ -83,6 +83,28 @@ class HomeController extends Controller
     {
         return view('pages.create_hauler');
     }
+    public function store_hauler(Request $request)
+    {
+        $this->validate($request, [
+            
+            'username' => 'required|string|max:255|unique:hauler_admins',
+            'email' => 'required|string|email|max:255|unique:hauler_admins',
+            'hauler_id' => 'required',
+
+        ]);
+        
+        $hauler_admin = new Hauler_admin;
+
+        $hauler_admin->username = $request->input('username');
+        $hauler_admin->email = $request->input('email');
+        $hauler_admin->password = bcrypt($request->input('username'));
+        $hauler_admin->hauler_id = $request->input('hauler_id');
+
+        $hauler_admin->save();
+
+        return redirect()->back()->with('success', 'Account Successfully Created !!');
+
+    }
     public function roadtanker()
     {
         $roadtankers = Roadtanker::get();
