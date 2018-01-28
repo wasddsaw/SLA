@@ -13,4 +13,7 @@ class Roadtanker extends Model
     public function hauler(){
         return $this->belongsTo('App\Hauler');
     }
+    public function status(){
+        return $this->hasMany('App\Status');
+    }
 }

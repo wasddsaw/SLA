@@ -19,7 +19,7 @@ Route::group(['middleware' => 'revalidate'],function(){
     });
 
     Auth::routes();
-
+    
     // cof 
     Route::get('/cof/logout', 'Auth\LoginController@userLogout')->name('cof.logout');
     Route::get('/home', 'HomeController@index')->name('home');
@@ -27,9 +27,16 @@ Route::group(['middleware' => 'revalidate'],function(){
     Route::get('/create_hauler', 'HomeController@create_hauler')->name('pages.create_hauler');
     Route::get('/roadtanker', 'HomeController@roadtanker')->name('pages.roadtanker');
     Route::get('/upload', 'HomeController@upload')->name('pages.upload');
+    
+    //status create
+    Route::get('/create_status', 'HomeController@create_status_langkawi')->name('pages.create_status.langkawi');
+    Route::get('/show_status', 'HomeController@show_status_langkawi')->name('pages.show_status.langkawi');
+
+    Route::post('status_details', 'HomeController@status_details')->name('status_details');
 
     // haule admin create
     Route::post('hauler_create', 'HomeController@store_hauler')->name('hauler_admin.store');
+    Route::post('status_create', 'HomeController@store_status')->name('status.store');
 
     // roadtanker upload
     Route::post('roadtanker-import', 'RoadtankerController@RoadtankerImport')->name('roadtanker.import');

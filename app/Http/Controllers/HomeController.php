@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Roadtanker;
 use App\Hauler_admin;
+use App\Status;
 
 class HomeController extends Controller
 {
@@ -115,4 +116,42 @@ class HomeController extends Controller
     {
         return view('pages.upload');
     }
+    public function store_status(Request $request)
+    {
+        $this->validate($request, [
+            
+            'roadtanker_id' => 'required',
+            'time' => 'required',
+         
+        ]);
+
+        $status = new Status;
+
+        $status->status = '0'; // status:pending
+        $status->time = $request->input('time');
+        $status->roadtanker_id = $request->input('roadtanker_id');
+        
+        $status->save();
+
+        return redirect()->back()->with('success', 'Status Successfully Created !!');
+
+    }
+    public function create_status_langkawi()
+    {   
+        $roadtankers = Roadtanker::where('terminal', 'Langkawi')->get();
+        return view('pages.create_status')->with('roadtankers', $roadtankers);
+    }
+    public function show_status_langkawi()
+    {
+        $statuses = Status::orderBy('created_at','desc')->with('roadtanker')->get(); 
+        return view('pages.show_status')->with('statuses', $statuses);
+    }
+    public function status_details(Request $request)
+    {
+        //$status = Status::find($request->id)->roadtanker;
+          $status = Status::with('roadtanker', 'roadtanker.hauler')->where('id', $request->id)->get();
+    
+        return $status->toJson();
+    }
+
 }

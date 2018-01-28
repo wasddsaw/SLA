@@ -10,7 +10,10 @@
                 <div class="panel-heading">Langkawi Terminal</div>
 
                 <div class="panel-body">
-                   Langkawi Terminal
+                   @if(count($langkawi) > 0)
+                        <a class="btn btn-primary" href="{{ route('pages.create_status.langkawi') }}">Create Status</a>
+                        <a class="btn btn-warning" href="{{ route('pages.show_status.langkawi') }}">Show Status</a>
+                   @endif
                 </div>
 
                 <table class="table">

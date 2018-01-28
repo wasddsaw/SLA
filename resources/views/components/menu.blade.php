@@ -17,6 +17,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'prai')
     <div class="list-group">
@@ -34,6 +35,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'kerteh')
     <div class="list-group">
@@ -51,6 +53,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'kuantan')
     <div class="list-group">
@@ -68,6 +71,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'kvdt')
     <div class="list-group">
@@ -85,6 +89,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'langkawi')
     <div class="list-group">
@@ -102,6 +107,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'lumut')
     <div class="list-group">
@@ -119,6 +125,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'melaka')
     <div class="list-group">
@@ -136,6 +143,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'pgudang')
     <div class="list-group">
@@ -153,6 +161,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'westport')
     <div class="list-group">
@@ -170,6 +179,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'hauler')
     <div class="list-group">
@@ -187,6 +197,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item active">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @elseif ($route == 'roadtanker')
     <div class="list-group">
@@ -204,6 +215,7 @@
     <div class="list-group">
         <a href="{{ route('pages.hauler') }}" class="list-group-item">Hauler</a>
         <a href="{{ route('pages.roadtanker') }}" class="list-group-item active">Roadtanker</a>
+        <a href="#" class="list-group-item">Status History</a>
     </div>
     @endif
 </div>
