@@ -13,5 +13,9 @@ class Hauler extends Model
     public function roadtankers(){
         return $this->hasMany('App\Roadtanker');
     }
+    public function hauler_admins()
+    {
+        return $this->hasMany('App\Hauler_admin');
+    }
 
 }

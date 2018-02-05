@@ -59,6 +59,15 @@ Route::group(['middleware' => 'revalidate'],function(){
         Route::get('/login', 'Auth\HaulerLoginController@showLoginForm')->name('hauler_admin.login');
         Route::post('/login', 'Auth\HaulerLoginController@login')->name('hauler_admin.login.submit');
         Route::get('/logout', 'Auth\HaulerLoginController@logout')->name('hauler_admin.logout');
+        Route::get('/prai', 'HaulerAdminController@prai')->name('hauler_admin.prai');
+        Route::get('/kerteh', 'HaulerAdminController@kerteh')->name('hauler_admin.kerteh');
+        Route::get('/kuantan', 'HaulerAdminController@kuantan')->name('hauler_admin.kuantan');
+        Route::get('/kvdt', 'HaulerAdminController@kvdt')->name('hauler_admin.kvdt');
+        Route::get('/langkawi', 'HaulerAdminController@langkawi')->name('hauler_admin.langkawi');
+        Route::get('/lumut', 'HaulerAdminController@lumut')->name('hauler_admin.lumut');
+        Route::get('/melaka', 'HaulerAdminController@melaka')->name('hauler_admin.melaka');
+        Route::get('/pgudang', 'HaulerAdminController@pgudang')->name('hauler_admin.pgudang');
+        Route::get('/westport', 'HaulerAdminController@westport')->name('hauler_admin.westport');
 
     });
 

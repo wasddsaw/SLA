@@ -153,7 +153,7 @@
             dataType:'json',
             success: function(data){
                 
-                //console.log(data);
+                console.log(data);
                 //console.log(data[0].id);
                 $('#myModal').modal('show');
                 $('#hauler').val(data[0].roadtanker.hauler.name);
