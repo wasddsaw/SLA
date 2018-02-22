@@ -136,15 +136,22 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Status Successfully Created !!');
 
     }
-    public function create_status_langkawi()
+    public function create_status($terminal)
     {   
-        $roadtankers = Roadtanker::where('terminal', 'Langkawi')->get();
+        $roadtankers = Roadtanker::where('terminal', $terminal)->get();
         return view('pages.create_status')->with('roadtankers', $roadtankers);
     }
-    public function show_status_langkawi()
+    public function show_status($terminal)
     {
         $statuses = Status::orderBy('created_at','desc')->with('roadtanker')->get(); 
-        return view('pages.show_status')->with('statuses', $statuses);
+
+        $data = array(
+
+            'statuses' => $statuses,
+            'terminal' => $terminal
+        );
+
+        return view('pages.show_status')->with($data);
     }
     public function status_details(Request $request)
     {
@@ -152,6 +159,14 @@ class HomeController extends Controller
           $status = Status::with('roadtanker', 'roadtanker.hauler')->where('id', $request->id)->get();
     
         return $status->toJson();
+    }
+    public function status_remove(Request $request)
+    {
+        $status = Status::find($request->input('id'));
+        $status->delete();
+
+        \Session::flash('success-remove', 'Status Successfully Removed !!');
+
     }
 
 }

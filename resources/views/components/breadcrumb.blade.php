@@ -116,11 +116,11 @@
             <li><a href="{{ route('pages.roadtanker') }}">Roadtanker</a></li>
             <li class="active">Upload Roadtanker</li>
         <!-- start langkawi -->    
-        @elseif ($route == 'create_status')  
+        @elseif ($route == 'create_status/Langkawi')  
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('terminal.langkawi') }}">Langkawi</a></li>
             <li class="active">Create Status</li>   
-        @elseif ($route == 'show_status')  
+        @elseif ($route == 'show_status/Langkawi')  
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('terminal.langkawi') }}">Langkawi</a></li>
             <li class="active">Show Status</li>   

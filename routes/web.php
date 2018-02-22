@@ -29,10 +29,12 @@ Route::group(['middleware' => 'revalidate'],function(){
     Route::get('/upload', 'HomeController@upload')->name('pages.upload');
     
     //status create
-    Route::get('/create_status', 'HomeController@create_status_langkawi')->name('pages.create_status.langkawi');
-    Route::get('/show_status', 'HomeController@show_status_langkawi')->name('pages.show_status.langkawi');
+    Route::get('/create_status/{terminal}', 'HomeController@create_status')->name('pages.create_status');
+    Route::get('/show_status/{terminal}', 'HomeController@show_status')->name('pages.show_status');
 
     Route::post('status_details', 'HomeController@status_details')->name('status_details');
+    Route::post('status_remove', 'HomeController@status_remove')->name('status_remove');
+    
 
     // haule admin create
     Route::post('hauler_create', 'HomeController@store_hauler')->name('hauler_admin.store');

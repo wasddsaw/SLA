@@ -10,7 +10,10 @@
                 <div class="panel-heading">Kerteh Terminal</div>
 
                 <div class="panel-body">
-                   Kerteh Terminal
+                    @if(count($kerteh) > 0)
+                        <a class="btn btn-primary" href="#">Create Status</a>
+                        <a class="btn btn-warning" href="#">Show Status</a>
+                    @endif
                 </div>
 
                 <table class="table">
