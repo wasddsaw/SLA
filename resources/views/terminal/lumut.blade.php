@@ -10,7 +10,13 @@
                 <div class="panel-heading">Lumut Terminal</div>
 
                 <div class="panel-body">
-                   Lumut Terminal
+                    @if(count($lumut) > 0)
+                        @foreach($lumut as $j)
+                            <?php $terminal = $j->terminal ?>
+                        @endforeach
+                        <a class="btn btn-primary" href="{{ route('pages.create_status', $terminal) }}">Create Status</a>
+                        <a class="btn btn-warning" href="{{ route('pages.show_status', $terminal) }}">Show Status</a>
+                    @endif
                 </div>
 
                 <table class="table">

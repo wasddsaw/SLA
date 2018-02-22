@@ -115,6 +115,36 @@
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('pages.roadtanker') }}">Roadtanker</a></li>
             <li class="active">Upload Roadtanker</li>
+        <!-- start kerteh -->    
+        @elseif ($route == 'create_status/Kerteh')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kerteh') }}">Kerteh</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Kerteh')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kerteh') }}">Kerteh</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end kerteh -->
+        <!-- start kuantan -->    
+        @elseif ($route == 'create_status/Kuantan')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kuantan') }}">Kuantan</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Kuantan')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kuantan') }}">Kuantan</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end kuantan -->
+        <!-- start kvdt -->    
+        @elseif ($route == 'create_status/KVDT')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kvdt') }}">KVDT</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/KVDT')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.kvdt') }}">KVDT</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end kvdt -->     
         <!-- start langkawi -->    
         @elseif ($route == 'create_status/Langkawi')  
             <li><a href="{{ route('home') }}">Dashboard</a></li>
@@ -124,7 +154,57 @@
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('terminal.langkawi') }}">Langkawi</a></li>
             <li class="active">Show Status</li>   
-        <!-- end langkawi -->      
+        <!-- end langkawi -->
+        <!-- start lumut -->    
+        @elseif ($route == 'create_status/Lumut')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.lumut') }}">Lumut</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Lumut')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.lumut') }}">Lumut</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end lumut -->   
+        <!-- start melaka -->    
+        @elseif ($route == 'create_status/Melaka')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.melaka') }}">Melaka</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Melaka')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.melaka') }}">Melaka</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end melaka -->   
+        <!-- start pgudang -->    
+        @elseif ($route == 'create_status/Pasir%20Gudang')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.pgudang') }}">Pasir Gudang</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Pasir%20Gudang')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.pgudang') }}">Pasir Gudang</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end pgudang --> 
+        <!-- start prai -->    
+        @elseif ($route == 'create_status/Prai')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.prai') }}">Prai</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Prai')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.prai') }}">Prai</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end prai --> 
+        <!-- start westport -->    
+        @elseif ($route == 'create_status/Westport')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.westport') }}">Westport</a></li>
+            <li class="active">Create Status</li>   
+        @elseif ($route == 'show_status/Westport')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li><a href="{{ route('terminal.westport') }}">Westport</a></li>
+            <li class="active">Show Status</li>   
+        <!-- end westport -->
         @endif
     </ol>
 </div>

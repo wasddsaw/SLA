@@ -10,7 +10,13 @@
                 <div class="panel-heading">KVDT Terminal</div>
 
                 <div class="panel-body">
-                   KVDT Terminal
+                    @if(count($kvdt) > 0)
+                        @foreach($kvdt as $j)
+                            <?php $terminal = $j->terminal ?>
+                        @endforeach
+                        <a class="btn btn-primary" href="{{ route('pages.create_status', $terminal) }}">Create Status</a>
+                        <a class="btn btn-warning" href="{{ route('pages.show_status', $terminal) }}">Show Status</a>
+                    @endif
                 </div>
 
                 <table class="table">

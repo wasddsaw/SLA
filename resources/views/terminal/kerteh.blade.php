@@ -11,8 +11,11 @@
 
                 <div class="panel-body">
                     @if(count($kerteh) > 0)
-                        <a class="btn btn-primary" href="#">Create Status</a>
-                        <a class="btn btn-warning" href="#">Show Status</a>
+                        @foreach($kerteh as $j)
+                            <?php $terminal = $j->terminal ?>
+                        @endforeach
+                        <a class="btn btn-primary" href="{{ route('pages.create_status', $terminal) }}">Create Status</a>
+                        <a class="btn btn-warning" href="{{ route('pages.show_status', $terminal) }}">Show Status</a>
                     @endif
                 </div>
 
