@@ -32,6 +32,43 @@
         @elseif ($route == 'hauler_admin/westport')  
             <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
             <li class="active">Westport</li>
+        <!-- start status-->    
+        @elseif ($route == 'hauler_admin/status/Prai')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.prai') }}">Prai</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Kerteh')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.kerteh') }}">Kerteh</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Kuantan')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.kuantan') }}">Kuantan</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/KVDT')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.kvdt') }}">KVDT</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Langkawi')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.langkawi') }}">Langkawi</a></li>
+            <li class="active">Status</li> 
+        @elseif ($route == 'hauler_admin/status/Lumut')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.lumut') }}">Lumut</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Melaka')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.melaka') }}">Melaka</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Pasir%20Gudang')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.pgudang') }}">Pasir Gudang</a></li>
+            <li class="active">Status</li>
+        @elseif ($route == 'hauler_admin/status/Westport')  
+            <li><a href="{{ route('hauler_admin.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('hauler_admin.westport') }}">Westport</a></li>
+            <li class="active">Status</li>       
         @endif
     @endif
 

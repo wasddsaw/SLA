@@ -9,9 +9,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Terminal</div>
                 <div class="panel-body">
-                   
-                    terminal
 
+                    @if(count($roadtanker) > 0)
+                        @foreach($roadtanker as $j)
+                            <?php $terminal = $j->terminal ?>
+                        @endforeach
+                        <a class="btn btn-warning" href="{{ route('hauler_admin.status', $terminal) }}">Show Status</a>
+                    @endif    
+                
                 </div>
                     <table class="table">
                         <tr>

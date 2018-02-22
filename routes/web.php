@@ -69,6 +69,11 @@ Route::group(['middleware' => 'revalidate'],function(){
         Route::get('/pgudang', 'HaulerAdminController@pgudang')->name('hauler_admin.pgudang');
         Route::get('/westport', 'HaulerAdminController@westport')->name('hauler_admin.westport');
 
+        
+        Route::get('/status/{terminal}', 'HaulerAdminController@status')->name('hauler_admin.status');
+        Route::post('status_details', 'HaulerAdminController@status_details')->name('hauler_admin.status_details');
+        Route::post('/status/update', 'HaulerAdminController@status_update')->name('hauler_admin.status_update');
+        
     });
 
 });

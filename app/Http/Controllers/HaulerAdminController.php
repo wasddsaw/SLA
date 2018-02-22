@@ -24,7 +24,7 @@ class HaulerAdminController extends Controller
     public function prai()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Prai'],
@@ -36,7 +36,7 @@ class HaulerAdminController extends Controller
     public function kerteh()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Kerteh'],
@@ -48,7 +48,7 @@ class HaulerAdminController extends Controller
     public function kuantan()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Kuantan'],
@@ -60,7 +60,7 @@ class HaulerAdminController extends Controller
     public function kvdt()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'KVDT'],
@@ -80,13 +80,13 @@ class HaulerAdminController extends Controller
         ])->get();
 
         //$roadtanker = Status::orderBy('created_at','desc')->with('roadtanker')->get(); 
-        
+       
         return view('hauler.terminal')->with('roadtanker', $roadtanker);
     }
     public function lumut()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Lumut'],
@@ -98,7 +98,7 @@ class HaulerAdminController extends Controller
     public function melaka()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Melaka'],
@@ -110,7 +110,7 @@ class HaulerAdminController extends Controller
     public function pgudang()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Pasir Gudang'],
@@ -122,7 +122,7 @@ class HaulerAdminController extends Controller
     public function westport()
     {
         $id = auth()->user()->id;
-        $roadtanker = Roadtanker::where([
+        $roadtanker = Roadtanker::with('status')->where([
 
             ['hauler_id', $id], 
             ['terminal', 'Westport'],
@@ -130,5 +130,50 @@ class HaulerAdminController extends Controller
         ])->get();
 
         return view('hauler.terminal')->with('roadtanker', $roadtanker);
+    }
+    /* status section */
+    public function status($terminal)
+    {
+        $status = Status::orderBy('created_at','desc')->with('roadtanker')->get(); 
+
+        $data = array(
+
+            'status' => $status,
+            'terminal' => $terminal
+        );
+       
+        return view('hauler.status')->with($data);
+    }   
+    public function status_details(Request $request)
+    {
+        $status = Status::with('roadtanker', 'roadtanker.hauler')->where('id', $request->id)->get();
+    
+        return $status->toJson();
+    }
+    public function status_update(Request $request)
+    {
+        $this->validate($request, [
+
+            'remarks_hauler' => 'required|max:255',
+        ]);
+
+        $plate = $request->input('plate_u');
+
+        $status = Status::find($request->input('id_u'));
+
+        $status->remarks_hauler = $request->input('remarks_hauler');
+        $status->status = '1'; // verfiy status
+        $status->save();
+        
+        \Session::flash('success', 'Status '.$plate.' Successfully Updated !!');
+
+        return response()->json(['success'=> 'Status '.$plate.' Successfully Updated !!']);
+
+        // return response()->json([
+
+        //     'id' => $request->input('id_u'),
+        //     'remarks_hauler' => $request->input('remarks_hauler')
+        // ]);
+
     }
 }
