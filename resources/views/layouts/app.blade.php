@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app_lumen.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/timeline.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

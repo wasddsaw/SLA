@@ -67,7 +67,7 @@
                                         @endif    
                                     @endforeach
                                 @else    
-                                    <tr><td colspan="5"><p align="center">No Record founds !!</p></td></tr>
+                                    <tr><td colspan="9"><p align="center">No Record founds !!</p></td></tr>
                                 @endif
                         </table>
                         </div>
@@ -112,7 +112,7 @@
                                         @endif    
                                     @endforeach
                                 @else    
-                                    <tr><td colspan="5"><p align="center">No Record founds !!</p></td></tr>
+                                    <tr><td colspan="9"><p align="center">No Record founds !!</p></td></tr>
                                 @endif
                         </table>
                         </div>
@@ -155,7 +155,7 @@
                                         @endif    
                                     @endforeach
                                 @else    
-                                    <tr><td colspan="5"><p align="center">No Record founds !!</p></td></tr>
+                                    <tr><td colspan="9"><p align="center">No Record founds !!</p></td></tr>
                                 @endif
                         </table>
                         </div>
@@ -198,7 +198,7 @@
                                         @endif    
                                     @endforeach
                                 @else    
-                                    <tr><td colspan="5"><p align="center">No Record founds !!</p></td></tr>
+                                    <tr><td colspan="9"><p align="center">No Record founds !!</p></td></tr>
                                 @endif
                         </table>
                         </div>

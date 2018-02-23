@@ -115,6 +115,9 @@
             <li><a href="{{ route('home') }}">Dashboard</a></li>
             <li><a href="{{ route('pages.roadtanker') }}">Roadtanker</a></li>
             <li class="active">Upload Roadtanker</li>
+        @elseif ($route == 'status_history')  
+            <li><a href="{{ route('home') }}">Dashboard</a></li>
+            <li class="active">Status Histoy</li>    
         <!-- start kerteh -->    
         @elseif ($route == 'create_status/Kerteh')  
             <li><a href="{{ route('home') }}">Dashboard</a></li>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Roadtanker;
 use App\Hauler_admin;
 use App\Status;
+use DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -167,6 +169,51 @@ class HomeController extends Controller
 
         \Session::flash('success-remove', 'Status Successfully Removed !!');
 
+    }
+    public function status_history()
+    {
+
+        $firtsdate = DB::table('status_history')->first();
+
+        $sh = DB::table('status_history')
+        ->join('roadtankers', 'status_history.roadtanker_id', '=', 'roadtankers.id')
+        ->join('haulers', 'roadtankers.hauler_id', '=', 'haulers.id')
+        ->select('status_history.*', 'roadtankers.plate', 'roadtankers.terminal', 'haulers.code', 'haulers.name')
+        ->orderBy('status_history.updated_at', 'decs')
+        ->get();
+
+    
+        $first = Carbon::parse($firtsdate->updated_at);
+        $current = Carbon::today();
+        $real = Carbon::create($first->year, $first->month, $first->day, 0);
+        $date_count = $real->diffInDays($real->copy()->today());
+
+        $data = array(
+        
+            'date_count' => $date_count,
+            'sh' => $sh,
+
+        );
+      
+        // for($h=0; $h <= $date_count; $h++)
+        // {
+        //     echo "<strong>".$current->subDays($h)->format('l jS \\of F Y')."</strong>";
+        //     echo "<br>";
+        //     foreach($sh as $i)
+        //     {
+                
+        //         if(Carbon::parse($i->updated_at)->toDateString() == $current->toDateString())
+        //         {
+        //             echo "updated date : ".$i->updated_at;
+        //             echo "<br>";
+        //         }
+               
+        //     }
+
+        // }
+        
+      
+       return view('pages.history_status')->with($data);
     }
 
 }

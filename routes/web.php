@@ -27,6 +27,7 @@ Route::group(['middleware' => 'revalidate'],function(){
     Route::get('/create_hauler', 'HomeController@create_hauler')->name('pages.create_hauler');
     Route::get('/roadtanker', 'HomeController@roadtanker')->name('pages.roadtanker');
     Route::get('/upload', 'HomeController@upload')->name('pages.upload');
+    Route::get('/status_history', 'HomeController@status_history')->name('pages.status_history');
     
     //status create
     Route::get('/create_status/{terminal}', 'HomeController@create_status')->name('pages.create_status');
